@@ -25,20 +25,69 @@ namespace iBU
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        private void Hamburger_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if(Home.IsSelected)
-            {
-
-            }
-
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void Hamburger_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            /*
+            if (Home.IsSelected)
+            {
+                Test.Text = "Home";
+            }
+
+            else if (SelectProfile.IsSelected)
+            {
+                Test.Text = "Select Profile";
+            }
+
+            else if (PersonalDetails.IsSelected)
+            {
+                Test.Text = "Personal Details";
+            }
+
+            else if (PersonalAlerts.IsSelected)
+            {
+                Test.Text = "Personal Alerts";
+            }
+
+            else if (Feedback.IsSelected)
+            {
+                Test.Text = "Feedback";
+            }
+
+            else if (Share.IsSelected)
+            {
+                Test.Text = "Share";
+            }
+
+            else if (About.IsSelected)
+            {
+                Test.Text = "About";
+            }
+
+            else if (Terms.IsSelected)
+            {
+                Test.Text = "Terms";
+            }
+
+            else if (LogOut.IsSelected)
+            {
+                Test.Text = "Log Out";
+            }
+            */
+
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            SearchBar.IsPaneOpen = !SearchBar.IsPaneOpen;
         }
     }
 }

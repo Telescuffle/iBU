@@ -7,13 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="WhiteSmoke">
+    <!--<Grid Background="{ThemeResource AppBarBackgroundThemeBrush}">-->
+    <Grid Background="GhostWhite">
 
-            <Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
 
-                <ColumnDefinition Width="55"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="55"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="50"/>
 
         </Grid.ColumnDefinitions>
 
@@ -23,6 +24,8 @@
             <RowDefinition Height="12*"/>
 
         </Grid.RowDefinitions>
+
+        <CommandBar Background="#930033"/>
 
         <!-- Title Pane -->
 
@@ -35,10 +38,10 @@
                    Margin="0,0,0,0"     
                    TextWrapping="Wrap" 
                    Text="iBU"
-                   FontSize="36"
+                   FontSize="28"
                    Grid.Row="0"
-                   RelativePanel.AlignHorizontalCenterWithPanel="True"
                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                   RelativePanel.AlignHorizontalCenterWithPanel="True"
                    Foreground="White"
                    FontFamily="Britannic Bold" 
                    FontWeight="Bold" 
@@ -68,14 +71,25 @@
 
         </RelativePanel>
 
+        <!--<TextBlock Name="Test"
+                   Grid.Column="1"
+                   FontSize="28"
+                   Text="test" 
+                   Margin="60,0,0,590" 
+                   Foreground="White" 
+                   FontFamily="Britannic Bold" 
+                   Grid.RowSpan="2"
+                   VerticalAlignment="Center"/>
+        -->
+
         <SplitView Name="MySplitView" 
                    Grid.Row="1" 
                    Grid.ColumnSpan="2"
                    DisplayMode="Inline" 
                    OpenPaneLength="225" 
                    HorizontalAlignment="Left">
-                    <SplitView.Pane>
-                        <ListBox SelectionMode="Single" 
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" 
                                  Name="Hamburger" 
                                  SelectionChanged="Hamburger_SelectionChanged"
                                  Background="#FF060505">
@@ -85,7 +99,7 @@
                             <TextBlock Text="Home" VerticalAlignment="Center" Margin="20,10,0,10" Foreground="White"/>
                         </StackPanel>
                     </ListBoxItem>
-                            <ListBoxItem Name="SelectProfile">
+                    <ListBoxItem Name="SelectProfile">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="28" VerticalAlignment="Center" Text="&#xE13D;" Foreground="White"/>
                             <TextBlock Text="Select Profile" VerticalAlignment="Center" Margin="20,10,0,10" Foreground="White"/>
@@ -99,9 +113,9 @@
                     </ListBoxItem>
                     <ListBoxItem Name="PersonalAlerts">
                         <StackPanel Orientation="Horizontal">
-                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="28" VerticalAlignment="Center" Text="&#xEC24;" Foreground="White"/>
-                        <TextBlock Text="Receive Personal Alerts" VerticalAlignment="Center" Margin="20,10,0,10" Foreground="White"/>
-                    </StackPanel>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="28" VerticalAlignment="Center" Text="&#xEC24;" Foreground="White"/>
+                            <TextBlock Text="Receive Personal Alerts" VerticalAlignment="Center" Margin="20,10,0,10" Foreground="White"/>
+                        </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Feedback">
                         <StackPanel Orientation="Horizontal">
@@ -134,13 +148,13 @@
                         </StackPanel>
                     </ListBoxItem>
                 </ListBox>
-                 </SplitView.Pane>
-              </SplitView>
+            </SplitView.Pane>
+        </SplitView>
 
         <RelativePanel Grid.Row="0" 
                        Grid.Column="2"
                        Background="#CCC3108C"
-                       Name="BULogo">
+                       Name="Search">
 
             <Button Name="SearchButton" 
                     FontFamily="Segoe MDL2 Assets" 
@@ -150,10 +164,34 @@
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     Foreground="White"
                     Background="#00000000"
-                    FontWeight="Bold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+                    FontWeight="Bold" 
+                    VerticalAlignment="Stretch" 
+                    HorizontalAlignment="Stretch" 
+                    Click="SearchButton_Click" 
+                    Margin="0,0,0,0" >
             </Button>
 
         </RelativePanel>
+
+        <SplitView Name="SearchBar"
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="2"
+                   DisplayMode="Inline" 
+                   HorizontalAlignment="Left" 
+                   Margin="0,0,0,0">
+            <SplitView.Pane>
+                <TextBox x:Name="SearchBox" 
+                 Grid.Column="0" 
+                  VariableSizedWrapGrid.ColumnSpan="2"
+                 TextWrapping="NoWrap" 
+                 InputScope="Search"
+                 FontSize="18" 
+                 PlaceholderText="Please enter a search term"
+                 Background="White" 
+                 Margin="0,0,0,0" 
+                 SelectionHighlightColor="#FF930033"/>
+            </SplitView.Pane>
+        </SplitView>
 
     </Grid>
 </Page>
